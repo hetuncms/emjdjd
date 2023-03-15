@@ -2,7 +2,7 @@
 
 <ul class="live-list">
     <li class="item status-0" th:each="item,count:${list}">
-        <a class="flex-between duizhen" href="/live/basketball/3886445" title="欧联杯 塞维利亚vs费内巴切">
+        <a class="flex-between duizhen" title="欧联杯 塞维利亚vs费内巴切" th:href="'/live/'+${item.getId()}">
             <div class="box-name">
                 <div class="saishi">
                     <time class="time" th:text="${#dates.format(item.getMatchStartTime(),'HH:mm')}">
@@ -55,16 +55,15 @@
                             console.log(item)
                             $(".live-list").append(genTemplate(result.data[item]))
                         }
-                    }else{
+                    } else {
                         $("#load_more").text(result.msg)
                     }
-
                 }})
         }
 
         function genTemplate(obj){
             return "<li class=\"item status-0\">\n" +
-                "        <a class=\"flex-between duizhen\" href=\"/zuqiu/3886445\" title=\"欧联杯 塞维利亚vs费内巴切\">\n" +
+                "        <a class=\"flex-between duizhen\" title=\"欧联杯 塞维利亚vs费内巴切\">\n" +
                 "            <div class=\"box-name\">\n" +
                 "                <div class=\"saishi\">\n" +
                 "                    <time class=\"time\">01:00</time>\n" +

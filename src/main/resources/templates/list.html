@@ -3,7 +3,7 @@
     <li class="item status-0" th:each="item,count:${list}">
       <div class="time" th:text="${#dates.format(item.getMatchStartTime(),'yyyy-MM-dd HH:mm')}"></div>
       <div class="duizhen">
-        <a class="flex live-link" href="/zuqiu/3855577" title="" target="_blank">
+        <a class="flex live-link" th:href="'/live/'+${item.getId()}" title="" target="_blank">
           <div class="f-right">
             <h3 th:text="${item.leftName}"></h3>
             <img class="team-logo lazyload"
@@ -26,7 +26,7 @@
       </div>
       <dl>
         <dt>
-          <a class="live-link" th:title="${item.gameName}" href="/zuqiu/">
+          <a class="live-link" th:title="${item.gameName}">
             <h2 th:if="${item.getLeagueResult()}" th:text="${item.getLeagueResult().name_zh_abbr}"></h2>
           </a>
         </dt>

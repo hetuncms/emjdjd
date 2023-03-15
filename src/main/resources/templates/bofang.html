@@ -10,36 +10,43 @@
 <th:block th:insert="~{header::header}"/>
 <div class="live-content">
     <div class="live-main">
+
+        <th:block th:insert="~{ad/banner_ad}"></th:block>
         <div class="live-inner">
-            <div class="match-info zuqiu-bg" onclick="jumpToInfo(1,3863701);">
+            <div class="match-info zuqiu-bg">
                 <div class="flex match-team">
                     <div class="team home">
                         <img class="t-logo" src="https://cdn.sportnanoapi.com/football/team/36559689046e7d1d4f597c1a0bf9c5d6.png" alt="仁川联队">
-                        <p>仁川联队</p>
+                        <p th:text="${live_info.getData().getLeftName()}"></p>
                     </div>
                     <div>
                         <div class="match-head">
-                            <strong>韩K联</strong>
-                            <time class="time">03-12 15:30</time>
+                            <strong th:if="${live_info.getData().getLeagueResult()}" th:text="${live_info.getData().getLeagueResult().getName_zh_abbr()}"></strong>
+                            <time class="time" th:text="${#dates.format(live_info.getData().getMatchStartTime(),'MM-dd HH-mm')}"></time>
                         </div>
                         <div class="noLive">
                             <div class="matchNostart">上半场</div>
                         </div>
-                        <p class="score">1-0</p>
+
+                        <p class="score" th:if="${not #lists.isEmpty(live_info.getData().getVisitingScore())}"
+                           th:text="${live_info.getData().getVisitingScore().get(live_info.getData().getVisitingScore().size()-1)}+':'
+                                    + ${live_info.getData().getMainScore().get(live_info.getData().getMainScore().size()-1)}">></p>
                     </div>
                     <div class="team away">
                         <img class="t-logo" src="https://cdn.sportnanoapi.com/football/team/c8fd873ce70869e03c201131166b6229.png" alt="济州联队">
-                        <p>济州联队</p>
+                        <p th:text="${live_info.getData().getRightName()}"></p>
                     </div>
                 </div>
 
             </div>
 
         </div>
-        <div class="livebox pclivebox">
-            <th:block th:insert="playing_pc"/>
+        <div class="livebox pclivebox" style="width: 100%">
+            <th:block th:insert="~{playing_pc::playing}"/>
         </div>
     </div>
 </div>
+
+<th:block th:insert="~{footer::footer}"></th:block>
 </body>
 </html>

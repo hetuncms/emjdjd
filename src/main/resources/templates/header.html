@@ -1,25 +1,24 @@
-
 <header class="header" th:fragment="header">
-  <div class="logo-box">
-    <div class="nav-box">
-      <h1 class="logo">
-        9球体育直播 <a href="/static" title="9球体育直播">
-        <img th:src="@{/emjdjd/img/jiuqiu_logo.jpg}" alt="9球体育直播">
-      </a>
-      </h1>
-      <nav class="nav">
-        <ul>
-          <li th:class="${not requestUrl.startsWith('/basketball') and not requestUrl.startsWith('/football')?'active':''}">
-            <span class="nav-text"><a href="/" title="首页">首页</a></span>
-          </li>
-          <li th:class="${requestUrl.startsWith('/basketball')?'active':''}">
-            <span class="nav-text"><a href="/basketball" title="篮球">篮球</a></span>
-          </li>
-          <li th:class="${requestUrl.startsWith('/football')?'active':''}">
-            <span class="nav-text"><a href="/football" title="足球">足球</a></span>
-          </li>
-        </ul>
-      </nav>
+    <div class="logo-box">
+        <div class="nav-box">
+            <h1 class="logo">
+                9球体育直播 <a href="/" title="9球体育直播">
+                <img th:src="@{/emjdjd/img/jiuqiu_logo.jpg}" alt="9球体育直播">
+            </a>
+            </h1>
+            <nav class="nav">
+                <ul>
+                    <li th:class="${not requestUrl.startsWith('/basketball') and not requestUrl.startsWith('/football')?'active':''}">
+                        <span class="nav-text"><a href="/" title="首页">首页</a></span>
+                    </li>
+                    <li th:class="${requestUrl.startsWith('/basketball')?'active':''}">
+                        <span class="nav-text"><a href="/basketball" title="篮球">篮球</a></span>
+                    </li>
+                    <li th:class="${requestUrl.startsWith('/football')?'active':''}">
+                        <span class="nav-text"><a href="/football" title="足球">足球</a></span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
-  </div>
 </header>
