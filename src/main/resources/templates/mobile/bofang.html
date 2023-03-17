@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>详情页</title>
-    <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
-    <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/video.js/8.2.0/alt/video-js-cdn.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/video.js/8.2.0/alt/video.core.min.js"></script>
     <script src="https://unpkg.com/@videojs/http-streaming@3.1.0/dist/videojs-http-streaming.js"></script>
 
     <link th:href="@{/emjdjd/css/main.css}" type="text/css" rel="stylesheet">
@@ -41,7 +41,7 @@
 
         </div>
         <div class="livebox pclivebox" style="padding: 10px 15px">
-            <th:block th:insert="mobile/playing::playing"/>
+            <th:block th:insert="~{mobile/playing::playing}"/>
         </div>
     </div>
 </div>

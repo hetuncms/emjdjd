@@ -101,7 +101,7 @@ public class Index {
     public String indexByDateAndPage(HttpServletRequest request, @PathVariable(required = false) String date, Model model) {
         String DATE_REGEX = "^([1-9]\\d{3}-)(([0]{0,1}[1-9]-)|([1][0-2]-))(([0-3]{0,1}[0-9]))$";
         if (!Pattern.matches(DATE_REGEX,date)) {
-            return "404";
+                throw new RuntimeException("404错误:"+request.getRequestURI());
         }
         return to(request, date, 0, TYPE_HOT, model);
     }
