@@ -87,6 +87,7 @@
     border-radius: 8px;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
 }
 .livebox .tab-list {
     display: flex;
