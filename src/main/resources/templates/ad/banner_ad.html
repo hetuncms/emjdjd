@@ -1,0 +1,9 @@
+<div>
+  <a target="_blank" th:each="item:${config.getBannerAd()}" th:href="${item.getUrl()}">
+    <img class="lazyload_on_page_ready"
+         src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+         th:if="${not #lists.isEmpty(item.getPicUrl())}"
+         th:attr="data-src=${item.getPicUrl()}"
+         th:style="'width:'+${item.getPicWidth()}+';'+'height:'+ ${item.getPicHeight()}+';margin-bottom:2px;'+'margin-left: auto;margin-right: auto;'">
+  </a>
+</div>

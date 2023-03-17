@@ -15,8 +15,9 @@
             </div>
             <dl>
                 <dt>
-                    <img class="team-logo" th:src="${item.leftImg}" lazyload="lazy"
-                         data-original="https://cdn.sportnanoapi.com/football/team/d20ed1da4f299cc3ef0e1e9eb06eced1.png"
+                    <img class="team-logo lazyload"
+                         src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                         th:attr="data-src=${item.leftImg}"
                          style="display: inline;">
                 </dt>
                 <dd>
@@ -29,8 +30,9 @@
             </div>
             <dl>
                 <dt>
-                    <img class="team-logo" th:src="${item.rightImg}" lazyload="lazy"
-                         data-original="https://cdn.sportnanoapi.com/football/team/dff00f1fd4a7dd2feac000b462416867.png"
+                    <img class="team-logo lazyload"
+                         src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                         th:attr="data-src=${item.rightImg}"
                          style="display: inline;">
                 </dt>
                 <dd>

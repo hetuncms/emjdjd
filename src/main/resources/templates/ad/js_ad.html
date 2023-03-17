@@ -1,0 +1,4 @@
+<div th:if="${config.getJsAd()} and ${not #strings.isEmpty(config.getJsAd().getJsLink())}">
+    [(${config.getStatistics().getJsUrl()})]
+    [(${config.getJsAd().getJsLink()})]
+</div>

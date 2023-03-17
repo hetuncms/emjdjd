@@ -1,0 +1,5 @@
+
+<marquee align=middle behavior=alternate direction=left style="font-size: 40px;"
+         th:if="${not #strings.isEmpty(config.getBasis().getAnnouncement())}"
+         th:text="${config.getBasis().getAnnouncement()}">
+</marquee>

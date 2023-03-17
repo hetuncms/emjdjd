@@ -6,8 +6,9 @@
         <a class="flex live-link" href="/zuqiu/3855577" title="" target="_blank">
           <div class="f-right">
             <h3 th:text="${item.leftName}"></h3>
-            <img class="team-logo" th:src="${item.leftImg}"
-                 lazyload="lazy"
+            <img class="team-logo lazyload"
+                 src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                 th:attr="data-src=${item.leftImg}"
                  alt="" style="display: block;">
           </div>
           <div class="score-wrap">
@@ -15,8 +16,9 @@
             <strong class="score">0-1</strong>
           </div>
           <div class="f-left">
-            <img class="team-logo" th:src="${item.rightImg}"
-                 lazyload="lazy"
+            <img class="team-logo lazyload"
+                 src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                 th:attr="data-src=${item.rightImg}"
                  alt="" style="display: block;">
             <h3 th:text="${item.rightName}"></h3>
           </div>

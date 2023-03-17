@@ -1,0 +1,36 @@
+<div class="bottom_float" id="float" th:if="${config.getFloatAd()}">
+    <a target="_blank" th:href="${config.getFloatAd().getUrl()}">
+        <img style="margin: 0 auto"
+             class="lazyload_on_page_ready"
+             src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+             th:if="${not #lists.isEmpty(config.getFloatAd().getPicUrl())}"
+             th:attr="data-src=${config.getFloatAd().getPicUrl()}"/>
+    </a>
+    <span class="close" onclick="close_float()">关闭</span>
+    <style>
+        .bottom_float{
+            position: fixed;
+            bottom: 0;
+            left: 0;right: 0;
+            height: 30vh;
+        }
+        .bottom_float img{
+            width: 100%;
+            height: 100%;
+        }
+        .bottom_float .close{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(255,255,255,.5);
+            padding: 2px 4px;
+            font-size: 80%;
+        }
+    </style>
+</div>
+
+<script>
+    function close_float() {
+        $('#float').hide();
+    }
+</script>

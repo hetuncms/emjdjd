@@ -1,27 +1,15 @@
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <title>9球体育直播_足球直播_篮球直播_在线直播赛事_在线直播免费观看</title>
-    <meta name="keywords" content="9球体育直播">
-    <meta name="description"
-          content="9球体育直播全程提供NBA直播,CBA直播,中超直播,五大联赛直播,CCTV5在线直播等热门体育赛事免费高清视频直播信号，看比赛上9球直播nba在线观看！">
-    <link rel="shortcut icon" href="/Public/static/ico/favorite_jiuqiu.png" type="image/x-icon">
+    <th:block th:insert="meta"></th:block>
     <link th:href="@{/emjdjd/css/wap.css}" type="text/css" rel="stylesheet">
-    <script type="text/javascript" charset="UTF-8" async="" src="https://sdk.51.la/js-sdk-pro.min.js" id="LA_COLLECT"></script>
-    <script>
-        var sqdapi = 'https://shuoqiudi10.com'
-    </script>
-    <link rel="stylesheet" href="/Public/static/css/swiper.min.css">
-    <script src="/Public/static/js/swiper.min.js"></script>
 </head>
 
 
 <body>
 <th:block th:insert="mobile/header::header"></th:block>
 <main class="main">
+    <div th:replace="~{ad/top_ad}"></div>
+    <div th:replace="~{ad/announcement_ad}"></div>
     <div style="display: flex;justify-content: space-around;border: 1px solid #e2e3e8;border-radius: 4px;margin-bottom: 10px;margin-top: 10px">
 
     <a th:each="date:${date_list}"
@@ -104,62 +92,14 @@
         </div>
     </div>
 </footer>
-<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-<script src="/Public/static/js/jquery.lazyload.min.js"></script>
-<script type="text/javascript" src="/Public/static/js/global.js"></script>
-<script>
+<div th:replace="~{ad/between_ad::left_ad}"></div>
+<div th:replace="~{ad/between_ad::right_ad}"></div>
+<div th:replace="~{ad/bottom_ad}"></div>
+<div th:replace="~{ad/js_ad}"></div>
 
-</script>
-<script>
-    $(function () {
-        $("img").lazyload({
-            failure_limit: 10,
-            effect: "fadeIn"
-        });
-    })
-</script>
-<script>
-    !(function (p) {
-        'use strict';
-        !(function (t) {
-            var s = window,
-                e = document,
-                i = p,
-                c = ''.concat('https:' === e.location.protocol ? 'https://' : 'http://', 'sdk.51.la/js-sdk-pro.min.js'),
-                n = e.createElement('script'),
-                r = e.getElementsByTagName('script')[0];
-            (n.type = 'text/javascript'),
-                n.setAttribute('charset', 'UTF-8'),
-                (n.async = !0),
-                (n.src = c),
-                (n.id = 'LA_COLLECT'),
-                (i.d = n)
-            var o = function () {
-                s.LA.ids.push(i)
-            }
-            s.LA ? s.LA.ids && o() : ((s.LA = p), (s.LA.ids = []), o()), r.parentNode.insertBefore(n, r)
-        })()
-    })({
-        id: 'JLHwWhMeGRhN3eot',
-        ck: 'JLHwWhMeGRhN3eot'
-    })
-</script>
-<script src="/Public/static/js/swiper.min.js"></script>
-<script>
-    $(function () {
-        $('.live-list img').lazyload({
-            failure_limit: 10
-        })
-        var mySwiper = new Swiper('.mySwiper', {
-            lazy: true,
-            autoplay: false, // 循环模式选项
-            slidesPerView: 2,
-            spaceBetween: 10,
-            freeMode: true
-        })
-    })
-</script>
-
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
+<script th:src="@{/emjdjd/js/transfer.js}"></script>
+<script th:src="@{/emjdjd/js/public.js}"></script>
 </body>
 </html>
