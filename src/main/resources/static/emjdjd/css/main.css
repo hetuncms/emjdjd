@@ -63,6 +63,7 @@ svg:not(:root) {
 html {
     -webkit-touch-callout: none;
     -webkit-text-size-adjust: 100%;
+    min-width: 1200px;
 }
 input,
 textarea,
@@ -422,7 +423,6 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1200px;
     height: 62px;
     margin: 0 auto;
 }
@@ -823,7 +823,6 @@ body {
 }
 .header {
     width: 100%;
-    min-width: 1200px;
     background: #fff;
 }
 .header .nav {
@@ -872,7 +871,6 @@ body {
 .hot-match {
     overflow: hidden;
     position: relative;
-    width: 1200px;
     padding: 0 50px;
     margin: 0 auto;
 }
@@ -970,7 +968,6 @@ body {
     margin-bottom: 5px;
 }
 .show-all-btn-container {
-    width: 1200px;
     margin: 0 auto;
     text-align: right;
 }
@@ -992,7 +989,6 @@ body {
     font-weight: bold;
 }
 .live-content {
-    width: 1200px;
     margin: 0 auto;
 }
 .live-content .live-list {
@@ -1121,7 +1117,6 @@ body {
     border-radius: 5px;
 }
 .box {
-    width: 1200px;
     margin: 0 auto;
 }
 .box-right {
@@ -1202,7 +1197,6 @@ body {
     display: block;
 }
 .banner-info {
-    width: 1200px;
     height: 80px;
     margin: 0 auto;
     display: flex;
@@ -1232,7 +1226,6 @@ body {
     background-size: 100%;
 }
 .news-box {
-    width: 1200px;
     margin: 20px auto;
     background-color: #fff;
     border-radius: 5px;
@@ -1298,7 +1291,6 @@ body {
     background: rgba(0, 0, 0, 0.5);
 }
 .article-content {
-    width: 1200px;
     margin: 0 auto;
 }
 .article-list {
