@@ -1,5 +1,5 @@
 <div class="couplet_left_ad" th:fragment="left_ad"
-     th:if="${config.getCouplets()} and ${not #strings.isEmpty(config.getCouplets().getLeftAd().getPicUrl())}">
+     th:if="${not #strings.isEmpty(config.getCouplets().getLeftAd())}">
     <th:block th:if="${config.getCouplets().getLeftAd()}">
         <img class="couplet_left_img_ad lazyload_on_page_ready"
              src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
@@ -7,7 +7,7 @@
              th:attr="data-src=${config.getCouplets().getLeftAd().getPicUrl()}"/>
     </th:block>
     <style>
-        .couplet_left_ad{
+        .couplet_left_ad {
             position: fixed;
             left: 0;
             top: 50%;
@@ -15,19 +15,20 @@
             height: 30%;
             transform: translateY(-50%);
         }
-        .couplet_left_ad img{
+
+        .couplet_left_ad img {
             width: 100%;
             height: 100%;
         }
     </style>
 </div>
 <div class="couplet_right_ad" th:fragment="right_ad"
-     th:if="${config.getCouplets()} and ${not #strings.isEmpty(config.getCouplets().getRightAd().getPicUrl())}">
+     th:if="${config.getCouplets().getRightAd()!=null}">
     <img class="couplet_righ_img_ad"
          th:if="${not #lists.isEmpty(config.getCouplets().getRightAd().getPicUrl())}"
          th:src="${config.getCouplets().getRightAd().getPicUrl()}"/>
     <style>
-        .couplet_right_ad{
+        .couplet_right_ad {
             position: fixed;
             right: 0;
             top: 50%;
@@ -35,7 +36,8 @@
             height: 30%;
             transform: translateY(-50%);
         }
-        .couplet_right_ad img{
+
+        .couplet_right_ad img {
             width: 100%;
             height: 100%;
         }

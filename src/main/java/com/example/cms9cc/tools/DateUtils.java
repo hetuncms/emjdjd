@@ -21,4 +21,8 @@ public class DateUtils {
     public static String getToday() {
         return new SimpleDateFormat("yyyy-MM-dd").format(new Date().getTime());
     }
+
+    public static Date now() {
+        return new Date(System.currentTimeMillis());
+    }
 }

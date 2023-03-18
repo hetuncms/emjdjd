@@ -5,13 +5,7 @@ import com.example.cms9cc.admin.bean.BasisBean;
 import com.example.cms9cc.admin.repositories.BasisMapping;
 import com.example.cms9cc.tools.RestartService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Arrays;
 
 @RestController
 @RequestMapping("/api/admin")

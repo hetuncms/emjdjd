@@ -3,6 +3,7 @@ package com.example.cms9cc.admin;
 import com.example.cms9cc.admin.ad.service.TopAdService;
 import com.example.cms9cc.admin.bean.*;
 import com.example.cms9cc.admin.repositories.*;
+import com.example.cms9cc.tools.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,27 +48,31 @@ public class AdminService {
     }
 
     public List<BannerAdBean> getBannerAd() {
-        return bannerAdMapping.findAll();
+        return bannerAdMapping.findAllByStatusTimeAfterOrderBySort(DateUtils.now());
     }
 
     public CoupletsMapBean getCoupletsAd() {
-        List<CoupletsBean> topAdBeans = coupletsAdMapping.findAll();
+        List<CoupletsBean> topAdBeans = coupletsAdMapping.findAllByStatusTimeAfter(DateUtils.now());
         CoupletsMapBean coupletsMapBean = new CoupletsMapBean();
         topAdBeans.forEach(coupletsBean -> {
             switch (coupletsBean.getLocation()) {
-                case "对联左" : coupletsMapBean.setLeftAd(coupletsBean);
-                case "对联右" : coupletsMapBean.setRightAd(coupletsBean);
+                case "对联左" -> coupletsMapBean.setLeftAd(coupletsBean);
+                case "对联右" -> coupletsMapBean.setRightAd(coupletsBean);
             }
         });
         return coupletsMapBean;
     }
 
     public FloatBean getFloatAd() {
-        return floatAdMapping.findAll().get(0);
+        List<FloatBean> allByStatusTimeAfter = floatAdMapping.findAllByStatusTimeAfter(DateUtils.now());
+        if (allByStatusTimeAfter.isEmpty()) {
+            return null;
+        }
+        return allByStatusTimeAfter.get(0);
     }
 
-
     public AllAdBean getAllConfig() {
-        return new AllAdBean(getBannerAd(), getBasis(), getCoupletsAd(), getFloatAd(), getJsAd(), getStatistics(),topAdService.getTopAdList());
+        return new AllAdBean(getBannerAd(), getBasis(), getCoupletsAd(),
+                getFloatAd(), getJsAd(), getStatistics(),topAdService.getTopAdList());
     }
 }

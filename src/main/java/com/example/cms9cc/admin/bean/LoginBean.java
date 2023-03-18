@@ -1,6 +1,8 @@
 package com.example.cms9cc.admin.bean;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import java.util.Objects;
 @Entity
