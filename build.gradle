@@ -40,10 +40,8 @@ dependencies {
     implementation 'org.xerial:sqlite-jdbc:3.41.0.0'
     implementation 'org.hibernate.orm:hibernate-community-dialects:6.1.6.Final'
     implementation 'com.vladmihalcea:hibernate-types-60:2.21.1'
-
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-
     implementation group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time', version: '3.0.4.RELEASE'
     implementation 'com.auth0:java-jwt:4.2.1'
 

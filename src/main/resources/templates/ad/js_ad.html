@@ -1,4 +1,4 @@
-<div th:if="${config.getJsAd()} and ${not #strings.isEmpty(config.getJsAd().getJsLink())}">
+<th:block>
     [(${config.getStatistics().getJsUrl()})]
     [(${config.getJsAd().getJsLink()})]
-</div>
+</th:block>

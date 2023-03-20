@@ -1,5 +1,7 @@
 package com.example.cms9cc.admin.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +19,9 @@ public class FloatBean {
 
     private String url;
     private String picUrl;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonProperty("status_time")
     private Date statusTime;
     private String tel;
     @Transient

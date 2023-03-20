@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 @Table(name = "js_ad")
 public class JsAdBean {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
 

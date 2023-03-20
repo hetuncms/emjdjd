@@ -33,10 +33,10 @@
     </div>
 </main>
 <th:block th:insert="~{footer::footer}"></th:block>
-<div th:replace="~{ad/between_ad::left_ad}"></div>
-<div th:replace="~{ad/between_ad::right_ad}"></div>
-<div th:replace="~{ad/bottom_ad}"></div>
-<div th:replace="~{ad/js_ad}"></div>
+<th:block th:insert="~{ad/between_ad::left_ad}"></th:block>
+<th:block th:insert="~{ad/between_ad::right_ad}"></th:block>
+<th:block th:insert="~{ad/bottom_ad}"></th:block>
+<th:block th:insert="~{ad/js_ad}"></th:block>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
